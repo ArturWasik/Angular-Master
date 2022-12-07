@@ -8,7 +8,8 @@
     "build-prod-watch": "ng build space-app --configuration production --watch",
     "start-server": "http-server -p 4550 -c-1 -P http://localhost:4550? dist/space-app",
     "test": "ng test",
-    "dev-api": "tsc -p projects/dev-api && node dist/dev-api/server.js"
+    "dev-api": "tsc -p projects/dev-api && node dist/dev-api/server.js",
+    "shared-lib": "ng build shared-lib --watch"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +45,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "ng-packagr": "^15.0.0",
     "typescript": "~4.8.4"
   }
 }

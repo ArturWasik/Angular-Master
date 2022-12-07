@@ -27,6 +27,9 @@
       "dev-api/*": [
         "./projects/dev-api/*"
       ],
+      "shared-lib": [
+        "dist/shared-lib"
+      ],
       "space-api/*": [
         "./projects/space-api/*"
       ]
