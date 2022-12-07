@@ -1,0 +1,17 @@
+<table>
+  <thead>
+  <tr>
+    <th>Naszywka</th>
+    <th>Nr lotu</th>
+    <th>Misja</th>
+    <th>Rakieta</th>
+    <th>Sukces</th>
+    <th>Data</th>
+    <th>Miejsce</th>
+    <th>Linki</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let launch of launches" appLaunchesListItem [launch]="launch">
+    <app-launch-details [details]="launch.details" (detailsUpdate)="updateDetails(launch, $event)"></app-launch-details>
+  </tbody>
+</table>
