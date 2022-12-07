@@ -1,23 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { LaunchesService } from 'space-api/services';
+import { LaunchesQueryParams } from 'space-api/types';
 import { LaunchDetailsUpdate } from 'space-api/types/launch-details-update';
+import { LaunchesStateService } from '../launches-state.service';
 
 @Component({
   selector: 'app-launches',
   templateUrl: './launches.component.html',
-  styleUrls: ['./launches.component.scss']
+  styleUrls: ['./launches.component.scss'],
+  providers: [LaunchesStateService]
 })
 export class LaunchesComponent implements OnInit {
-  launches = this.launchesService.getLaunches();
+  launches = this.launchesState.launches
+  queryParams = this.launchesState.queryParams;
 
-  constructor(private launchesService: LaunchesService) { }
+  constructor(private launchesState: LaunchesStateService) { }
 
   ngOnInit(): void {
   }
 
   updateLaunchDetails(detailsUpdate: LaunchDetailsUpdate): void {
-    this.launchesService.updateDetails(detailsUpdate).subscribe(() => {
-        this.launches = this.launchesService.getLaunches();
-    });
+    this.launchesState.updateLaunchDetails(detailsUpdate);
+  }
+
+  searchLaunches(params: LaunchesQueryParams): void {
+    this.launchesState.searchLaunches(params);
   }
 }
