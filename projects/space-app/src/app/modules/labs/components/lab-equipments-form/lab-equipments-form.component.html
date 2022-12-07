@@ -1,0 +1,9 @@
+<select [formControl]="selectedEquipmentType">
+  <option *ngFor="let equipmentType of EquipmentTypes | keyvalue" [value]="equipmentType.value">
+    {{equipmentType.key}}
+  </option>
+</select>
+<button type="button" (click)="addEquipment()">Dodaj</button>
+<app-equipment-form *ngFor="let formGroup of formArray.controls; index as index" [formGroup]="formGroup">
+  <button type="button" class="remove-button" (click)="removeEquipment(index)">Usuń</button>
+</app-equipment-form>

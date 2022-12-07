@@ -1,0 +1,17 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section div {
+  flex: 1;
+}
+
+.logo-wrapper {
+  text-align: center;
+}
+
+.description-wrapper {
+  font-size: 120%;
+}

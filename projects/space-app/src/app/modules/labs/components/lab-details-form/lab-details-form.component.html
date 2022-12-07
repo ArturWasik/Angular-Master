@@ -1,0 +1,32 @@
+<div>
+  <div class="form-field inline">
+    <label>Nazwa</label>
+    <input type="text" [formControl]="formGroup.controls.name">
+  </div>
+
+  <div class="form-field inline">
+    <label>Lokalizacja</label>
+    <select [formControl]="formGroup.controls.moonId">
+      <option [ngValue]="1">Phobos</option>
+      <option [ngValue]="20">Księżyc</option>
+    </select>
+
+    <!-- TODO dodaj kontrolkę z wyborem księżyca wg planety -->
+  </div>
+</div>
+
+<div>
+  <div class="form-field inline">
+    <label>
+      <input type="checkbox" [formControl]="formGroup.controls.autonomous">
+      labolatorium autonomiczne
+    </label>
+  </div>
+
+  <div class="form-field inline">
+    <label>
+      <input type="checkbox" [formControl]="formGroup.controls.enableTags">
+      włącz tagowanie
+    </label>
+  </div>
+</div>

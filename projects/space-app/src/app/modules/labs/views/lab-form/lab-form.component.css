@@ -1,0 +1,11 @@
+.step-wrapper {
+  margin: 20px 0;
+}
+
+button:not(:last-of-type) {
+  margin-right: 6px;
+}
+
+button.active {
+  background-color: darkgray;
+}

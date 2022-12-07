@@ -1,0 +1,4 @@
+<h2>Laboratoria</h2>
+
+<button type="button" routerLink="create/new">Dodaj</button>
+<app-labs-list *ngIf="labs | async as labs" [labs]="labs" (labRemove)="removeLab($event)"></app-labs-list>

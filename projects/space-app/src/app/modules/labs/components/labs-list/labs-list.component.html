@@ -1,0 +1,16 @@
+<table>
+  <thead>
+  <th>Nazwa</th>
+  <th>Lokalizacja</th>
+  <th>Autonomiczne</th>
+  <th>Włączone tagi</th>
+  <th>Liczba sprzętu</th>
+  <th></th>
+  </thead>
+  <tbody *ngFor="let lab of labs; trackBy: trackByFn" appLabsListItem [lab]="lab">
+    <div class="actions">
+      <button type="button" [routerLink]="['edit', lab.id]">Edytuj</button>
+      <button type="button" (click)="removeLab(lab)">Usuń</button>
+    </div>
+  </tbody>
+</table>

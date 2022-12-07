@@ -1,0 +1,16 @@
+app-equipment-form {
+  padding: 10px;
+}
+
+app-equipment-form:first-of-type {
+  margin-top: 10px;
+}
+
+app-equipment-form:not(:last-of-type) {
+  display: block;
+  border-bottom: 1px solid black;
+}
+
+app-equipment-form:nth-of-type(odd) {
+  background-color: lightgray;
+}

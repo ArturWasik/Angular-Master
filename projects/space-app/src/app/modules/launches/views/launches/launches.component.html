@@ -1,0 +1,52 @@
+<h2>Starty SpaceX</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>Naszywka</th>
+    <th>Nr lotu</th>
+    <th>Misja</th>
+    <th>Rakieta</th>
+    <th>Sukces</th>
+    <th>Data</th>
+    <th>Miejsce</th>
+    <th>Linki</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let launch of launches | async">
+  <tr>
+    <td>
+      <img class="thumbnail" *ngIf="launch.missionPatch" [src]="launch.missionPatch">
+    </td>
+    <td>
+      #{{launch.id}}
+    </td>
+    <td>
+      {{launch.missionName}}
+    </td>
+    <td>
+      {{launch.rocketName}}
+    </td>
+    <td>
+      {{launch.success}}
+    </td>
+    <td>
+      {{launch.launchDate | date:'short'}}
+    </td>
+    <td>
+      {{launch.launchSiteName}}
+    </td>
+    <td>
+      <a *ngIf="launch.links.videoLink" [href]="launch.links.videoLink" target="_blank">Video</a>
+      <a *ngIf="launch.links.presskitLink" [href]="launch.links.presskitLink" target="_blank">Presskit</a>
+      <a *ngIf="launch.links.articleLink" [href]="launch.links.articleLink" target="_blank">Article</a>
+      <a *ngIf="launch.links.wikipediaLink" [href]="launch.links.wikipediaLink" target="_blank">Wikipedia</a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="8">
+      {{launch.details}}
+    </td>
+  </tr>
+  </tbody>
+</table>

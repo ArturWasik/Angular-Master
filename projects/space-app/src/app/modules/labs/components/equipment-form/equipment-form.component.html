@@ -1,0 +1,13 @@
+<div [formGroup]="formGroup">
+  <div class="form-field inline">
+    <label>Nazwa</label>
+    <input type="text" [formControl]="formGroup.controls.name">
+  </div>
+  <div class="form-field inline">
+    <label>Tag</label>
+    <input type="text" [formControl]="formGroup.controls.tag">
+  </div>
+  <div class="form-field inline">
+    <ng-content select=".remove-button"></ng-content>
+  </div>
+</div>

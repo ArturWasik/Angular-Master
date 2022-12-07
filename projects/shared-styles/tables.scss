@@ -1,0 +1,27 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  background-color: lightgray;
+  line-height: 2;
+}
+
+tbody a {
+  padding: 0 4px;
+}
+
+tbody tr:last-of-type td {
+  padding-bottom: 20px;
+}
+
+tbody tr:first-of-type td {
+  padding-top: 20px;
+}
+
+tbody  tr:last-child {
+  border-bottom: 2px solid darkgray;
+}

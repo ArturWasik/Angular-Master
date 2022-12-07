@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'tables';
+@import 'forms';
+
+* {
+  font-family: Arial, serif;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.header a {
+  padding: 0 4px;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+img.thumbnail {
+  max-width: 100px;
+}
