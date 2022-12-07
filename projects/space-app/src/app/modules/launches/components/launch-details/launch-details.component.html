@@ -1,0 +1,8 @@
+<div *ngIf="editorOpened; else detailsLabel">
+  <textarea #detailsInput autofocus>{{details}}</textarea>
+  <button type="button" (click)="closeEditor()">Anuluj</button>
+  <button type="button" (click)="update(detailsInput.value)">Zapisz</button>
+</div>
+<ng-template #detailsLabel>
+  <div class="read" (click)="openEditor()">{{details}}</div>
+</ng-template>
