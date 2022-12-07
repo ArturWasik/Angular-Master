@@ -1,3 +1,4 @@
+<div class="read" (click)="openEditor()">{{formattedDetails}}</div>
 <div *ngIf="editorOpened; else detailsLabel">
   <textarea #detailsInput autofocus>{{details}}</textarea>
   <button type="button" (click)="closeEditor()">Anuluj</button>
@@ -6,3 +7,4 @@
 <ng-template #detailsLabel>
   <div class="read" (click)="openEditor()">{{details}}</div>
 </ng-template>
+

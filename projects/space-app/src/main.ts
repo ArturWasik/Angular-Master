@@ -1,4 +1,5 @@
-import { enableProdMode } from '@angular/core';
+import { ApplicationRef, enableProdMode } from '@angular/core';
+import { enableDebugTools } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
@@ -9,4 +10,8 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
+  .then(app => {
+    if (environment.production) { return; }
+      enableDebugTools(app.injector.get(ApplicationRef).components[0]);
+    })
   .catch(err => console.error(err));
