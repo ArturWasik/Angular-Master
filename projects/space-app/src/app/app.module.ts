@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { StartComponent } from './views/start/start.component';
+import { SharedLibModule } from 'projects/shared-lib/src/public-api';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StartComponent } from './views/start/start.component';
     BrowserModule,
     SharedModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedLibModule
   ],
   providers: [
     {provide: API_URL, useValue: environment.apiUrl}
