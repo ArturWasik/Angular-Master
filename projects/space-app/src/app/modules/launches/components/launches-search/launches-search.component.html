@@ -1,0 +1,16 @@
+<form [formGroup]="form" (ngSubmit)="search()">
+  <label for="sort-control">Sortuj wg kolumny</label>
+  <select [formControl]="form.controls.sort" id="sort-control">
+    <option value="id">Nr lotu</option>
+    <option value="rocketName">Rakieta</option>
+    <option value="launchSiteName">Miejsce</option>
+  </select>
+  <label for="order-control">w kierunku</label>
+  <select [formControl]="form.controls.order" id="order-control">
+    <option value="ASC">rosnącym</option>
+    <option value="DESC">malejącym</option>
+  </select>
+  <label for="query-control">i wyszukaj</label>
+  <input type="text" [formControl]="form.controls.query" placeholder="podaj frazę" id="query-control">
+  <button type="submit">Szukaj</button>
+</form>

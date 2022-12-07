@@ -7,14 +7,17 @@ import { LaunchesComponent } from './views/launches/launches.component';
 import { LaunchesListComponent } from './components/launches-list/launches-list.component';
 import { LaunchesListItemComponent } from './components/launches-list-item/launches-list-item.component';
 import { LaunchDetailsComponent } from './components/launch-details/launch-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LaunchesSearchComponent } from './components/launches-search/launches-search.component';
 
 
 @NgModule({
-  declarations: [LaunchesComponent, LaunchesListComponent, LaunchesListItemComponent, LaunchDetailsComponent],
+  declarations: [LaunchesComponent, LaunchesListComponent, LaunchesListItemComponent, LaunchDetailsComponent, LaunchesSearchComponent],
   imports: [
     CommonModule,
     SharedModule,
-    LaunchesRoutingModule
+    LaunchesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class LaunchesModule { }
