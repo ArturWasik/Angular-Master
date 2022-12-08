@@ -10,8 +10,7 @@
       <option [ngValue]="1">Phobos</option>
       <option [ngValue]="20">Księżyc</option>
     </select>
-
-    <!-- TODO dodaj kontrolkę z wyborem księżyca wg planety -->
+    <app-lab-moon-id-selector [formControl]="formGroup.controls.moonId"></app-lab-moon-id-selector>
   </div>
 </div>
 

@@ -26,7 +26,7 @@ const routes: Routes = [
     path: 'martian-calendar',
     loadChildren: () => import('./modules/martian-calendar/martian-calendar.module').then(module => module.MartianCalendarModule),
     canLoad: [FeatureEnabledGuard],
-    data: {feature: 'martian-calendar'}
+    data: {feature: 'martianCalendar'}
   },
   {
     path: 'forbidden',

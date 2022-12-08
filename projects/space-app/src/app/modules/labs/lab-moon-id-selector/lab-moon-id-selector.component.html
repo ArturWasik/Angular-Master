@@ -1,0 +1,8 @@
+<select [formControl]="planetControl" (blur)="onTouch()">
+    <option [ngValue]="null">Wybierz planetę</option>
+    <option *ngFor="let planet of planetOptions | async" [ngValue]="planet">{{planet}}</option>
+</select>
+<select [formControl]="moonControl" (blur)="onTouch()">
+    <option [ngValue]="null">Wybierz księżyc</option>
+    <option *ngFor="let moon of moonOptions | async" [ngValue]="moon.id">{{moon.name}}</option>
+</select>
