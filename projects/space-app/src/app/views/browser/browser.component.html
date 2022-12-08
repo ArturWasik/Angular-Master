@@ -1,0 +1,3 @@
+<button [routerLink]="['', {outlets: {browser: null}}]">Zamknij</button>
+<h3>Przeglądasz {{url | async}}</h3>
+<iframe [src]="safeUrl | async"></iframe>

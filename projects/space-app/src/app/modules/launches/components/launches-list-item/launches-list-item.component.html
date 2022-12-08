@@ -22,9 +22,9 @@
   </td>
   <td>
     <a *ngIf="launch.links.videoLink" [href]="launch.links.videoLink" target="_blank">Video</a>
-    <a *ngIf="launch.links.presskitLink" [href]="launch.links.presskitLink" target="_blank">Presskit</a>
-    <a *ngIf="launch.links.articleLink" [href]="launch.links.articleLink" target="_blank">Article</a>
-    <a *ngIf="launch.links.wikipediaLink" [href]="launch.links.wikipediaLink" target="_blank">Wikipedia</a>
+    <a *ngIf="launch.links.presskitLink"  [routerLink]="['', {outlets: {browser: ['url', launch.links.presskitLink]}}]">Presskit</a>
+    <a *ngIf="launch.links.articleLink" [routerLink]="['', {outlets: {browser: ['url', launch.links.articleLink]}}]">Article</a>
+    <a *ngIf="launch.links.wikipediaLink" [routerLink]="['', {outlets: {browser: ['url', launch.links.wikipediaLink]}}]">Wikipedia</a>
   </td>
 </tr>
 <tr>

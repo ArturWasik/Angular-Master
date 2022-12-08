@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { A2sCommModule } from 'a2s-comm';
@@ -14,6 +14,8 @@ import { AppConfigService } from 'space-api/services';
 import { Observable } from 'rxjs';
 import { AppConfig } from 'space-api/types';
 import { ForbiddenComponent } from './views/forbidden/forbidden.component';
+import { BrowserComponent } from './views/browser/browser.component';
+import { BusyInterceptor } from './services/busy.interceptor';
 
 function appConfigInitializer(appConfigService: AppConfigService): () => Observable<AppConfig> {
   return () => appConfigService.getAppConfig();
@@ -23,7 +25,8 @@ function appConfigInitializer(appConfigService: AppConfigService): () => Observa
   declarations: [
     AppComponent,
     StartComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    BrowserComponent
   ],
   imports: [
     A2sCommModule,
@@ -39,6 +42,11 @@ function appConfigInitializer(appConfigService: AppConfigService): () => Observa
       provide: APP_INITIALIZER,
       useFactory: appConfigInitializer,
       deps: [AppConfigService],
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useExisting: BusyInterceptor,
       multi: true
     }
   ],
