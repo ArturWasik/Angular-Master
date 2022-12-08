@@ -1,0 +1,18 @@
+:host {
+  position: fixed;
+  background-color: lightblue;
+  bottom: 0;
+  height: 70vh;
+  width: 80vw;
+  padding: 0 20px;
+}
+
+h3 {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+iframe {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+}

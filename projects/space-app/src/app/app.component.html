@@ -11,3 +11,9 @@
 <a2s-comm></a2s-comm>
 
 <small>{{appVersion}}</small>
+
+<router-outlet name="browser"></router-outlet>
+
+<div class="loading" *ngIf="busy | async">
+  Trwa przetwarzanie danych...
+</div>
