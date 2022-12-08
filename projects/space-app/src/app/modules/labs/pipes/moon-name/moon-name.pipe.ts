@@ -1,18 +1,25 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 import { MoonsService } from 'space-api/services';
+import { Moon } from 'space-api/types';
+import { mapToMoonName } from './map-to-moon-name';
 
 @Pipe({
   name: 'moonName'
 })
 export class MoonNamePipe implements PipeTransform {
-  constructor(private moonService: MoonsService) {}
+  private static moons: Observable<Moon[]>;
+
+  constructor(private moonService: MoonsService) {
+    MoonNamePipe.moons ??= this.moonService.getMoons().pipe(
+      shareReplay(1)
+    );
+  }
 
   transform(moonId: number): Observable<string> {
-    return this.moonService.getMoon(moonId)
-      .pipe(
-        map(moon => moon ? `${moon.name} (${moon.planet})` : 'n/a')
-      );
+    return MoonNamePipe.moons.pipe(
+      mapToMoonName(moonId)
+    );
   }
 }
