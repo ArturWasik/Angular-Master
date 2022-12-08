@@ -11,6 +11,7 @@ import { LabFormComponent } from './views/lab-form/lab-form.component';
 import { LabDetailsFormComponent } from './components/lab-details-form/lab-details-form.component';
 import { LabEquipmentsFormComponent } from './components/lab-equipments-form/lab-equipments-form.component';
 import { EquipmentFormComponent } from './components/equipment-form/equipment-form.component';
+import { LabMoonIdSelectorComponent } from './lab-moon-id-selector/lab-moon-id-selector.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { EquipmentFormComponent } from './components/equipment-form/equipment-fo
     LabDetailsFormComponent,
     LabEquipmentsFormComponent,
     EquipmentFormComponent,
+    LabMoonIdSelectorComponent,
   ],
   imports: [
     CommonModule,
