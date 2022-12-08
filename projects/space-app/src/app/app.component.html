@@ -1,8 +1,8 @@
 <div class="header">
-  <a routerLink="/start">Space App</a>
-  <a routerLink="/launches">Loty kosmiczne</a>
-  <a routerLink="/labs">Laboratoria</a>
-  <a routerLink="/martian-calendar">Czas marsjański</a>
+  <a routerLink="/start" *appIfFeatureEnabled="'start'">Space App</a>
+  <a routerLink="/launches" *appIfFeatureEnabled="'launches'">Loty kosmiczne</a>
+  <a routerLink="/labs" *appIfFeatureEnabled="'labs'">Laboratoria</a>
+  <a routerLink="/martian-calendar" *appIfFeatureEnabled="'martianCalendar'">Czas marsjański</a>
 </div>
 <div class="container">
   <router-outlet></router-outlet>
