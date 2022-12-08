@@ -13,6 +13,7 @@ import { SharedLibModule } from 'projects/shared-lib/src/public-api';
 import { AppConfigService } from 'space-api/services';
 import { Observable } from 'rxjs';
 import { AppConfig } from 'space-api/types';
+import { ForbiddenComponent } from './views/forbidden/forbidden.component';
 
 function appConfigInitializer(appConfigService: AppConfigService): () => Observable<AppConfig> {
   return () => appConfigService.getAppConfig();
@@ -21,7 +22,8 @@ function appConfigInitializer(appConfigService: AppConfigService): () => Observa
 @NgModule({
   declarations: [
     AppComponent,
-    StartComponent
+    StartComponent,
+    ForbiddenComponent
   ],
   imports: [
     A2sCommModule,
