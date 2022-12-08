@@ -1,0 +1,20 @@
+<div>
+    <div class="form-field inline">
+      <label>Producent</label>
+      <select [formControl]="formGroup.controls['producer']">
+        <option>Asus</option>
+        <option>HP</option>
+        <option>Lenovo</option>
+        <option>Apple</option>
+      </select>
+    </div>
+
+    <div class="form-field inline">
+      <label>System operacyjny</label>
+      <select [formControl]="formGroup.controls['os']">
+        <option>Windows</option>
+        <option>Linux</option>
+        <option>Macos</option>
+      </select>
+    </div>
+  </div>
