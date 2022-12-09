@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { LabsService } from 'space-api/services';
 import { Lab } from 'space-api/types';
+import { loadLabs } from '../../actions/labs.actions';
+import { selectLabsAll } from '../../selectors/labs.selectors';
 
 @Component({
   selector: 'app-labs',
@@ -8,9 +11,14 @@ import { Lab } from 'space-api/types';
   styleUrls: ['./labs.component.css']
 })
 export class LabsComponent {
-  labs = this.labService.getLabs();
+  labs = this.store.select(selectLabsAll);
 
-  constructor(private labService: LabsService) { }
+  constructor(private labService: LabsService,
+              private store: Store) { }
+
+  ngOnInit(): void {
+    this.store.dispatch(loadLabs());
+  }
 
   removeLab(lab: Lab): void {
     if (!confirm('Czy na pewno?')) {
