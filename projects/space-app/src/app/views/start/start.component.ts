@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { hideNavigation, showNavigation } from '../../actions/app.actions';
 
 @Component({
   selector: 'app-start',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
   }
 
+  showNavigation(): void {
+    this.store.dispatch(showNavigation());
+  }
+
+  hideNavigation(): void {
+    this.store.dispatch(hideNavigation());
+  }
 }
