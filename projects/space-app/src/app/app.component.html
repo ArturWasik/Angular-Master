@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" *ngIf="navigationVisible | async">
   <a routerLink="/start" *appIfFeatureEnabled="'start'">Space App</a>
   <a routerLink="/launches" *appIfFeatureEnabled="'launches'">Loty kosmiczne</a>
   <a routerLink="/labs" *appIfFeatureEnabled="'labs'">Laboratoria</a>
