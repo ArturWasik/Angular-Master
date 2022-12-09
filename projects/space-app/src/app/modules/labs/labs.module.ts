@@ -14,6 +14,10 @@ import { EquipmentFormComponent } from './components/equipment-form/equipment-fo
 import { LabMoonIdSelectorComponent } from './lab-moon-id-selector/lab-moon-id-selector.component';
 import { ComputerFormComponent } from './components/computer-form/computer-form.component';
 import { DetectorFormComponent } from './components/detector-form/detector-form.component';
+import { StoreModule } from '@ngrx/store';
+import * as fromLabs from './reducers/labs.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { LabsEffects } from './effects/labs.effects';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,9 @@ import { DetectorFormComponent } from './components/detector-form/detector-form.
     CommonModule,
     SharedModule,
     LabsRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forFeature(fromLabs.labsFeatureKey, fromLabs.reducer),
+    EffectsModule.forFeature([LabsEffects])
   ]
 })
 export class LabsModule { }
