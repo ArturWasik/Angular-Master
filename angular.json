@@ -31,7 +31,8 @@
                 "input": "dist/shared-lib/assets",
                 "glob": "*",
                 "output": "assets"
-              }
+              },
+              "projects/space-app/src/manifest.webmanifest"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
@@ -41,7 +42,9 @@
             "styles": [
               "projects/space-app/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "projects/space-app/ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -105,7 +108,8 @@
             "tsConfig": "projects/space-app/tsconfig.spec.json",
             "assets": [
               "projects/space-app/src/favicon.ico",
-              "projects/space-app/src/assets"
+              "projects/space-app/src/assets",
+              "projects/space-app/src/manifest.webmanifest"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
