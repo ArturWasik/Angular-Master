@@ -10,10 +10,27 @@
 
 <a2s-comm></a2s-comm>
 
-<small>{{appVersion}}</small>
+<small>{{appVersion}} | </small>
+
+<ng-container *ngIf="isSubscribed | async; else requestSubTmpl">
+  <button (click)="revokeSubscription()">Wyłącz powiadomienia</button>
+</ng-container>
+<ng-template #requestSubTmpl>
+  <button (click)="requestSubscription()">Włącz powiadomienia</button>
+</ng-template>
 
 <router-outlet name="browser"></router-outlet>
 
 <div class="loading" *ngIf="busy | async">
   Trwa przetwarzanie danych...
+</div>
+
+<div class="update" *ngIf="updateAvailable | async">
+  Dostępna aktualizacja aplikacji
+  <button (click)="activateUpdate()">Aktywuj</button>
+</div>
+
+<div class="error" *ngIf="unrecoverableError | async">
+  Wystąpił błąd krytyczny
+  <button (click)="reloadApp()">Odśwież stronę</button>
 </div>

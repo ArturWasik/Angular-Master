@@ -6,3 +6,21 @@
     background-color: orange;
     width: 100%;
   }
+
+  .update {
+    position: fixed;
+    bottom: 0;
+    padding: 4px;
+    text-align: center;
+    background-color: greenyellow;
+    width: 100%;
+  }
+
+  .error {
+    position: fixed;
+    bottom: 0;
+    padding: 4px;
+    text-align: center;
+    background-color: orangered;
+    width: 100%;
+  }
